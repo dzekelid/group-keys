@@ -7,8 +7,8 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotome
 x-kinRank: "7"
 x-alexaRank: "7422"
 tags: Group Keys
-created: "2018-08-26"
-modified: "2018-08-26"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/apis.md
 specificationVersion: "0.14"
 apis:
@@ -79,6 +79,91 @@ apis:
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkeyorganizers-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkeyorganizers-get-openapi.md
+- name: Go To Meeting - Create organizer in group
+  x-api-slug: groupsgroupkeyorganizers-post
+  description: Creates a new organizer and sends an email to the email address defined
+    in request. This API call is only available to users with the admin role. You
+    may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating
+    organizers for those products. A G2W or G2T organizer will also have access to
+    G2M.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//G2M/rest
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkeyorganizers-post-openapi.md
+- name: Go To Meeting - Get upcoming meetings by group
+  x-api-slug: groupsgroupkeyupcomingmeetings-get
+  description: Get upcoming meetings for a specified group. This API call is only
+    available to users with the admin role. This API call can be used only for groups
+    with maximum 50 organizers.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//G2M/rest
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkeyupcomingmeetings-get-openapi.md
+- name: SCIM - Delete Group
+  x-api-slug: groupsgroupkey-delete
+  description: Deletes a group from the organization (but not from the account). The
+    group must be in the organization. This call requires the role ROLE_ORG_WRITE.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//identity/v1
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkey-delete-openapi.md
+- name: SCIM - Get Group
+  x-api-slug: groupsgroupkey-get
+  description: Queries group details in the organization domain. This call requires
+    the role ROLE_ORG_READ.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//identity/v1
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkey-get-openapi.md
+- name: SCIM - Update Group
+  x-api-slug: groupsgroupkey-patch
+  description: Updates one or more values of an existing group without sending the
+    full definition. Member groups and member users must be in the organization. This
+    call requires the role ROLE_ORG_WRITE.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//identity/v1
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkey-patch-openapi.md
+- name: SCIM - Replace Group
+  x-api-slug: groupsgroupkey-put
+  description: Updates an existing group. The request must include the full group
+    definition. To modify one or more values without sending the full definition,
+    see "Update Group". Member groups and member users must be in the organization.
+    This call requires the role ROLE_ORG_WRITE.
+  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/731-gotomeeting.jpg
+  humanURL: https://citrixonline.com
+  baseURL: https://api.citrixonline.com//identity/v1
+  tags: Office, Meetings, Collaboration, Video Conferencing, Video Conferencing, SaaS,
+    Technology, Enterprise, API Provider, Meetings, Profiles, Conferences, Relative
+    Data, Service API, Networks
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/group-keys/master/_listings/gotomeeting/groupsgroupkey-put-openapi.md
 x-common:
 - type: x-api-gallery
   url: http://google.url.shortener.api.gallery.streamdata.io

@@ -3,17 +3,18 @@ swagger: "2.0"
 x-collection-name: GoToMeeting
 x-complete: 0
 info:
-  title: Go To Meeting Get organizers by group
-  description: Returns all the organizers within a specific group. This API call is
-    only available to users with the admin role.
+  title: SCIM Update Group
+  description: Updates one or more values of an existing group without sending the
+    full definition. Member groups and member users must be in the organization. This
+    call requires the role ROLE_ORG_WRITE.
   termsOfService: https://developer.citrixonline.com/terms-use
   contact:
     name: Developer Support
     url: https://developer.citrixonline.com
     email: developer-support@citrixonline.com
-  version: 1.0.0
+  version: N/A
 host: api.citrixonline.com
-basePath: /G2M/rest
+basePath: /identity/v1
 schemes:
 - http
 produces:
@@ -119,6 +120,100 @@ paths:
       - Groups
       - GroupKey
       - Organizers
+    post:
+      summary: Create organizer in group
+      description: Creates a new organizer and sends an email to the email address
+        defined in request. This API call is only available to users with the admin
+        role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables,
+        creating organizers for those products. A G2W or G2T organizer will also have
+        access to G2M.
+      operationId: creates-a-new-organizer-and-sends-an-email-to-the-email-address-defined-in-request--this-api-call-is
+      x-api-path-slug: groupsgroupkeyorganizers-post
+      parameters:
+      - in: body
+        name: body
+        description: The details of the organizer to be created
+        schema:
+          $ref: '#/definitions/holder'
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Groups
+      - GroupKey
+      - Organizers
+  /groups/{groupKey}/upcomingMeetings:
+    get:
+      summary: Get upcoming meetings by group
+      description: Get upcoming meetings for a specified group. This API call is only
+        available to users with the admin role. This API call can be used only for
+        groups with maximum 50 organizers.
+      operationId: get-upcoming-meetings-for-a-specified-group--this-api-call-is-only-available-to-users-with-the-admin
+      x-api-path-slug: groupsgroupkeyupcomingmeetings-get
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Groups
+      - GroupKey
+      - UpcomingMeetings
+  /Groups/{groupKey}:
+    delete:
+      summary: Delete Group
+      description: Deletes a group from the organization (but not from the account).
+        The group must be in the organization. This call requires the role ROLE_ORG_WRITE.
+      operationId: deleteGroup
+      x-api-path-slug: groupsgroupkey-delete
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Groups
+      - GroupKey
+    get:
+      summary: Get Group
+      description: Queries group details in the organization domain. This call requires
+        the role ROLE_ORG_READ.
+      operationId: getGroup
+      x-api-path-slug: groupsgroupkey-get
+      parameters:
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Groups
+      - GroupKey
+    patch:
+      summary: Update Group
+      description: Updates one or more values of an existing group without sending
+        the full definition. Member groups and member users must be in the organization.
+        This call requires the role ROLE_ORG_WRITE.
+      operationId: updateGroup
+      x-api-path-slug: groupsgroupkey-patch
+      parameters:
+      - in: body
+        name: body
+        description: The group data to update
+        schema:
+          $ref: '#/definitions/holder'
+      - in: query
+        name: No Name
+      responses:
+        200:
+          description: OK
+      tags:
+      - Groups
+      - GroupKey
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
